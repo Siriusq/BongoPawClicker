@@ -25,13 +25,6 @@
     mc:Ignorable="d">
 
     <Grid>
-        <MediaElement
-            x:Name="MeowMedia"
-            LoadedBehavior="Manual"
-            MediaEnded="MeowMedia_MediaEnded"
-            MediaFailed="MeowMedia_MediaFailed"
-            Visibility="Collapsed"
-            Volume="1" />
         <materialDesign:Card
             Margin="10"
             Background="{DynamicResource CardBackgroundColor}"

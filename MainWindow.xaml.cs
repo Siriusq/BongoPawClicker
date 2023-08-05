@@ -1,6 +1,8 @@
 ﻿using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using System;
+using System.Media;
+using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,6 +27,7 @@ namespace BongoPawClicker
         //Default Hot Key is Alt,Control + P
         private Key hotKey;
         private ModifierKeys hotKeyModifiers;
+        System.Media.SoundPlayer meowAudio;
 
         public MainWindow()
         {
@@ -62,6 +65,8 @@ namespace BongoPawClicker
             RandomAreaHeight.Text = Properties.Settings.Default.RandomAreaHeight;
             InfinityClickEnabledToggleButton.IsChecked = Properties.Settings.Default.InfinityClickEnabled;
             ClickTimesTextBox.Text = Properties.Settings.Default.ClickTimes;
+
+            meowAudio = new System.Media.SoundPlayer(Properties.Resources.meow);
         }
 
         #region HotKey
@@ -299,7 +304,6 @@ namespace BongoPawClicker
             {
                 //Get Click Type
                 clickType = ClickTypeSelection.SelectedIndex;
-                Console.WriteLine(clickType);
 
                 //Get Click Interval
                 try
@@ -470,27 +474,11 @@ namespace BongoPawClicker
 
                 if (meow)
                 {
-                    MeowMedia.Visibility = Visibility.Visible;
-                    //Very weird bug, when I put an audio file in the root directory, it plays fine,
-                    //but when I put it in a subdirectory, I get an error said that no media file can be found!
-                    MeowMedia.Source = new Uri("Cat-meow-sound.mp3", UriKind.Relative);
-                    //MeowMedia.Source = new Uri("./Assets/BongoCat/Cat-meow-sound.mp3", UriKind.Relative);
-                    MeowMedia.Play();
+                    meowAudio.Play();
                 }
 
                 UpdateHintBox(1);
             }));
-        }
-
-        //Play Meow Audio When Clicks Finished
-        private void MeowMedia_MediaEnded(object sender, RoutedEventArgs e)
-        {
-            MeowMedia.Visibility = Visibility.Collapsed;
-        }
-
-        private void MeowMedia_MediaFailed(object sender, ExceptionRoutedEventArgs e)
-        {
-            MessageBox.Show("Media failed to play: " + e.ErrorException.Message);
         }
 
     }
