@@ -1,0 +1,83 @@
+﻿<Window
+    x:Class="BongoPawClicker.PositionSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BongoPawClicker"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="PositionSelector"
+    AllowsTransparency="True"
+    Background="Gray"
+    FontSize="16"
+    KeyDown="PositionSelector_KeyDown"
+    MouseLeftButtonDown="PositionSelectorCanvas_MouseLeftButtonDown"
+    MouseLeftButtonUp="PositionSelectorCanvas_MouseLeftButtonUp"
+    MouseMove="PositionSelectorCanvas_MouseMove"
+    Opacity="0.5"
+    Topmost="True"
+    WindowState="Maximized"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Grid>
+        <Border BorderBrush="OrangeRed" BorderThickness="10" />
+        <StackPanel
+            Margin="0,-50,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+
+            <Label Content="Realtime Mouse Coordinates" />
+        </StackPanel>
+
+        <StackPanel
+            Margin="0,0,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+
+            <Label Content="X:" />
+            <Label
+                x:Name="XCoordsPreview"
+                Margin="0,0,0,0"
+                Content="0" />
+
+            <Label Content="Y:" />
+            <Label
+                x:Name="YCoordsPreview"
+                Margin="0,0,0,0"
+                Content="0" />
+        </StackPanel>
+
+        <StackPanel
+            Margin="0,50,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Horizontal">
+
+            <Label Content="Click or Press" />
+
+            <materialDesign:PackIcon
+                Width="35"
+                Height="30"
+                VerticalAlignment="Center"
+                Foreground="{StaticResource PrimaryHueLightBrush}"
+                Kind="KeyboardEsc" />
+
+            <Label Content="to Exit" />
+        </StackPanel>
+
+        <Rectangle
+            x:Name="SelectedAreaPreview"
+            Width="10"
+            Height="10"
+            Margin="0,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Fill="{StaticResource PrimaryHueLightBrush}"
+            Opacity="0.5"
+            Stroke="{StaticResource PrimaryHueDarkBrush}"
+            StrokeThickness="1"
+            Visibility="Collapsed" />
+    </Grid>
+</Window>
