@@ -119,45 +119,41 @@
 
                 <!--  Click Type Selection  -->
                 <Grid Grid.Row="1" Margin="10,0,15,0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
-                        <ColumnDefinition Width="*" />
-                    </Grid.ColumnDefinitions>
                     <!--  Label  -->
-                    <Grid Grid.Column="0">
-                        <StackPanel Height="60" Orientation="Horizontal">
-                            <Label Margin="0,0,0,0" VerticalAlignment="Center">
-                                <Border
-                                    Width="5"
-                                    Height="30"
-                                    Margin="0,0,0,0"
-                                    HorizontalAlignment="Left"
-                                    Background="{DynamicResource IndicatorColor}"
-                                    BorderBrush="{DynamicResource IndicatorColor}"
-                                    BorderThickness="1" />
-                            </Label>
-                            <Label VerticalAlignment="Center">
-                                <AccessText Text="{x:Static lang:Resources.ClickTypeName}" />
-                            </Label>
-                        </StackPanel>
-                    </Grid>
+                    <StackPanel
+                        Height="60"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal">
+                        <Label Margin="0,0,0,0" VerticalAlignment="Center">
+                            <Border
+                                Width="5"
+                                Height="30"
+                                Margin="0,0,0,0"
+                                HorizontalAlignment="Left"
+                                Background="{DynamicResource IndicatorColor}"
+                                BorderBrush="{DynamicResource IndicatorColor}"
+                                BorderThickness="1" />
+                        </Label>
+                        <Label VerticalAlignment="Center">
+                            <AccessText Text="{x:Static lang:Resources.ClickTypeName}" />
+                        </Label>
+                    </StackPanel>
+
                     <!--  Toggle  -->
-                    <Grid Grid.Column="1">
-                        <StackPanel
-                            Height="60"
-                            HorizontalAlignment="Center"
-                            Orientation="Horizontal">
-                            <ListBox
-                                x:Name="ClickTypeSelection"
-                                VerticalAlignment="Center"
-                                HorizontalContentAlignment="Stretch"
-                                Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineListBox}">
-                                <ListBoxItem Content="{x:Static lang:Resources.LeftSingleName}" IsSelected="True" />
-                                <ListBoxItem Content="{x:Static lang:Resources.LeftDoubleName}" />
-                                <ListBoxItem Content="{x:Static lang:Resources.RightSingleName}" />
-                            </ListBox>
-                        </StackPanel>
-                    </Grid>
+                    <StackPanel
+                        Height="60"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+                        <ListBox
+                            x:Name="ClickTypeSelection"
+                            VerticalAlignment="Center"
+                            HorizontalContentAlignment="Stretch"
+                            Style="{StaticResource MaterialDesignChoiceChipPrimaryOutlineListBox}">
+                            <ListBoxItem Content="{x:Static lang:Resources.LeftSingleName}" IsSelected="True" />
+                            <ListBoxItem Content="{x:Static lang:Resources.LeftDoubleName}" />
+                            <ListBoxItem Content="{x:Static lang:Resources.RightSingleName}" />
+                        </ListBox>
+                    </StackPanel>
                 </Grid>
 
                 <!--  Click Interval  -->

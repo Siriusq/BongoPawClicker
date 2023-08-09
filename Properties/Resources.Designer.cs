@@ -187,7 +187,7 @@ namespace BongoPawClicker.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Msec 的本地化字符串。
+        ///   查找类似 ms 的本地化字符串。
         /// </summary>
         public static string msName {
             get {

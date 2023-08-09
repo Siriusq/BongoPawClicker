@@ -161,7 +161,7 @@
     <value>Mins</value>
   </data>
   <data name="msName" xml:space="preserve">
-    <value>Msec</value>
+    <value>ms</value>
   </data>
   <data name="PositionSelectorHint0" xml:space="preserve">
     <value>Click or Press</value>
