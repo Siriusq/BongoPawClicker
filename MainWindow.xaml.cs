@@ -1,8 +1,7 @@
 ﻿using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using System;
-using System.Media;
-using System.Reflection;
+using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -67,6 +66,12 @@ namespace BongoPawClicker
             ClickTimesTextBox.Text = Properties.Settings.Default.ClickTimes;
 
             meowAudio = new System.Media.SoundPlayer(Properties.Resources.meow);
+
+            CultureInfo currentCulture = CultureInfo.CurrentCulture;
+            CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
+
+            Console.WriteLine("Current Culture: " + currentCulture.Name);
+            Console.WriteLine("Current UI Culture: " + currentUICulture.Name);
         }
 
         #region HotKey
@@ -95,20 +100,47 @@ namespace BongoPawClicker
         //Update Hint TextBox
         public void UpdateHintBox(int signal)
         {
-            switch (signal)
+            if (CultureInfo.CurrentUICulture.Name == "zh-CN")
             {
-                case 0:
-                    HintTextBox.Text = $"Current hotKey is {hotKeyModifiers} + {hotKey}";
-                    break;
-                case 1:
-                    HintTextBox.Text = "Click Completed! Meow~";
-                    break;
-                case 2:
-                    HintTextBox.Text = $"Click started! Press {hotKeyModifiers} + {hotKey} to stop!";
-                    break;
-                case 3:
-                    HintTextBox.Text = $"Infinite clicks enabled, remember to use {hotKeyModifiers} + {hotKey} to stop it!";
-                    break;
+                switch (signal)
+                {
+                    case 0:
+                        HintTextBox.Text = $"当前快捷键为 {hotKeyModifiers} + {hotKey}";
+                        break;
+                    case 1:
+                        HintTextBox.Text = "点击完成了喵~";
+                        break;
+                    case 2:
+                        HintTextBox.Text = $"点击开始！按下 {hotKeyModifiers} + {hotKey} 来停止喵~";
+                        break;
+                    case 3:
+                        HintTextBox.Text = $"无限点击开启, 记得用 {hotKeyModifiers} + {hotKey} 来退出喵~";
+                        break;
+                    case 4:
+                        HintTextBox.Text = "无限点击已关闭喵~";
+                        break;
+                }
+            }
+            else
+            {
+                switch (signal)
+                {
+                    case 0:
+                        HintTextBox.Text = $"Current hotKey is {hotKeyModifiers} + {hotKey}";
+                        break;
+                    case 1:
+                        HintTextBox.Text = "Click Completed! Meow~";
+                        break;
+                    case 2:
+                        HintTextBox.Text = $"Click started! Press {hotKeyModifiers} + {hotKey} to stop!";
+                        break;
+                    case 3:
+                        HintTextBox.Text = $"Infinite clicks enabled, remember to use {hotKeyModifiers} + {hotKey} to stop it!";
+                        break;
+                    case 4:
+                        HintTextBox.Text = "Infinite clicks disabled";
+                        break;
+                }
             }
 
         }
@@ -197,7 +229,7 @@ namespace BongoPawClicker
             Properties.Settings.Default.Topmost = topmost;
             Properties.Settings.Default.HotKey = hotKey.ToString();
             Properties.Settings.Default.Modifiers = hotKeyModifiers.ToString();
-            
+
             //Save User's Input
             Properties.Settings.Default.ClickType = ClickTypeSelection.SelectedIndex;
             Properties.Settings.Default.ClickIntervalMins = MinsTextBox.Text;
@@ -228,6 +260,11 @@ namespace BongoPawClicker
         private void InfinityClickEnabledToggleButton_Checked(object sender, RoutedEventArgs e)
         {
             UpdateHintBox(3);
+        }
+
+        private void InfinityClickEnabledToggleButton_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateHintBox(4);
         }
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
@@ -352,7 +389,7 @@ namespace BongoPawClicker
                 {
                     try
                     {
-                        //infinityClickEnabled = InfinityClickEnabledToggleButton.IsChecked.Value;
+                        infinityClickEnabled = InfinityClickEnabledToggleButton.IsChecked.Value;
                         clickTimes = ValidIntConvertor(ClickTimesTextBox.Text);
                     }
                     catch (Exception ex)

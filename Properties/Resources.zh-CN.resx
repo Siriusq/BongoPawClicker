@@ -118,91 +118,87 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AlwaysOnTopName" xml:space="preserve">
-    <value>Always On Top</value>
+    <value>窗口始终置顶</value>
   </data>
   <data name="BongoCatName" xml:space="preserve">
-    <value>Bongo Cat: </value>
+    <value>邦鼓猫：</value>
   </data>
   <data name="ClickIntervalName" xml:space="preserve">
-    <value>Click Interval</value>
+    <value>点击间隔时间</value>
   </data>
   <data name="ClickPositionName" xml:space="preserve">
-    <value>Click Position</value>
+    <value>点击位置坐标</value>
   </data>
   <data name="ClickTimesName" xml:space="preserve">
-    <value>Click Times</value>
+    <value>点击次数</value>
   </data>
   <data name="ClickTypeName" xml:space="preserve">
-    <value>Click Type</value>
+    <value>点击方式</value>
   </data>
   <data name="ClickUntilStoppedName" xml:space="preserve">
-    <value>Click Until Stopped</value>
+    <value>手动停止前持续点击</value>
   </data>
   <data name="DarkModeName" xml:space="preserve">
-    <value>Dark Mode</value>
+    <value>黑色主题</value>
   </data>
   <data name="HotKeyName" xml:space="preserve">
-    <value>HotKey</value>
+    <value>快捷键</value>
   </data>
   <data name="LeftDoubleName" xml:space="preserve">
-    <value>Left Double</value>
+    <value>左键 ・ 双击</value>
   </data>
   <data name="LeftSingleName" xml:space="preserve">
-    <value>Left Single</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="meow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\meow.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>左键 ・ 单击</value>
   </data>
   <data name="MeowName" xml:space="preserve">
-    <value>Cat Meow After Auto-click Completion</value>
+    <value>自动点击执行完毕后邦鼓猫喵喵叫提醒</value>
   </data>
   <data name="MinsName" xml:space="preserve">
-    <value>Mins</value>
+    <value>分钟</value>
   </data>
   <data name="msName" xml:space="preserve">
-    <value>Msec</value>
+    <value>毫秒</value>
   </data>
   <data name="PositionSelectorHint0" xml:space="preserve">
-    <value>Click or Press</value>
+    <value>点击或按下</value>
   </data>
   <data name="PositionSelectorHint1" xml:space="preserve">
-    <value>to Exit</value>
+    <value>来退出</value>
   </data>
   <data name="PositionSelectorName" xml:space="preserve">
-    <value>Realtime Mouse Coordinates</value>
+    <value>鼠标位置实时坐标</value>
   </data>
   <data name="RandomAreaName" xml:space="preserve">
-    <value>Random Area Enable</value>
+    <value>范围内随机位置点击</value>
   </data>
   <data name="RandomDelayName" xml:space="preserve">
-    <value>Random Delay Enable</value>
+    <value>点击间隔内随机延时</value>
   </data>
   <data name="RightSingleName" xml:space="preserve">
-    <value>Right Single</value>
+    <value>右键 ・ 单击</value>
   </data>
   <data name="SecsName" xml:space="preserve">
-    <value>Secs</value>
+    <value>秒钟</value>
   </data>
   <data name="SelectName" xml:space="preserve">
-    <value>Select</value>
+    <value>选择</value>
   </data>
   <data name="SetName" xml:space="preserve">
-    <value>Set</value>
+    <value>确定</value>
   </data>
   <data name="SettingsName" xml:space="preserve">
-    <value>Settings</value>
+    <value>设定</value>
   </data>
   <data name="StartName" xml:space="preserve">
-    <value>Start</value>
+    <value>开始</value>
   </data>
   <data name="StopName" xml:space="preserve">
-    <value>Stop</value>
+    <value>停止</value>
   </data>
   <data name="TitleName" xml:space="preserve">
-    <value>Bongo Paw Clicker</value>
+    <value>邦鼓猫连点器</value>
   </data>
   <data name="WelcomeMessage" xml:space="preserve">
-    <value>Welcome! Meow~~~</value>
+    <value>欢迎使用喵~</value>
   </data>
 </root>

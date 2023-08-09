@@ -22,7 +22,7 @@ namespace BongoPawClicker.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace BongoPawClicker.Properties {
         ///   返回此类使用的缓存的 ResourceManager 实例。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("BongoPawClicker.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace BongoPawClicker.Properties {
         ///   使用此强类型资源类的所有资源查找执行重写。
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -61,11 +61,263 @@ namespace BongoPawClicker.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Always On Top 的本地化字符串。
+        /// </summary>
+        public static string AlwaysOnTopName {
+            get {
+                return ResourceManager.GetString("AlwaysOnTopName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bongo Cat:  的本地化字符串。
+        /// </summary>
+        public static string BongoCatName {
+            get {
+                return ResourceManager.GetString("BongoCatName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click Interval 的本地化字符串。
+        /// </summary>
+        public static string ClickIntervalName {
+            get {
+                return ResourceManager.GetString("ClickIntervalName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click Position 的本地化字符串。
+        /// </summary>
+        public static string ClickPositionName {
+            get {
+                return ResourceManager.GetString("ClickPositionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click Times 的本地化字符串。
+        /// </summary>
+        public static string ClickTimesName {
+            get {
+                return ResourceManager.GetString("ClickTimesName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click Type 的本地化字符串。
+        /// </summary>
+        public static string ClickTypeName {
+            get {
+                return ResourceManager.GetString("ClickTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click Until Stopped 的本地化字符串。
+        /// </summary>
+        public static string ClickUntilStoppedName {
+            get {
+                return ResourceManager.GetString("ClickUntilStoppedName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dark Mode 的本地化字符串。
+        /// </summary>
+        public static string DarkModeName {
+            get {
+                return ResourceManager.GetString("DarkModeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 HotKey 的本地化字符串。
+        /// </summary>
+        public static string HotKeyName {
+            get {
+                return ResourceManager.GetString("HotKeyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Left Double 的本地化字符串。
+        /// </summary>
+        public static string LeftDoubleName {
+            get {
+                return ResourceManager.GetString("LeftDoubleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Left Single 的本地化字符串。
+        /// </summary>
+        public static string LeftSingleName {
+            get {
+                return ResourceManager.GetString("LeftSingleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似于 System.IO.MemoryStream 的 System.IO.UnmanagedMemoryStream 类型的本地化资源。
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream meow {
+        public static System.IO.UnmanagedMemoryStream meow {
             get {
                 return ResourceManager.GetStream("meow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cat Meow After Auto-click Completion 的本地化字符串。
+        /// </summary>
+        public static string MeowName {
+            get {
+                return ResourceManager.GetString("MeowName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Mins 的本地化字符串。
+        /// </summary>
+        public static string MinsName {
+            get {
+                return ResourceManager.GetString("MinsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Msec 的本地化字符串。
+        /// </summary>
+        public static string msName {
+            get {
+                return ResourceManager.GetString("msName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click or Press 的本地化字符串。
+        /// </summary>
+        public static string PositionSelectorHint0 {
+            get {
+                return ResourceManager.GetString("PositionSelectorHint0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 to Exit 的本地化字符串。
+        /// </summary>
+        public static string PositionSelectorHint1 {
+            get {
+                return ResourceManager.GetString("PositionSelectorHint1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Realtime Mouse Coordinates 的本地化字符串。
+        /// </summary>
+        public static string PositionSelectorName {
+            get {
+                return ResourceManager.GetString("PositionSelectorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Random Area Enable 的本地化字符串。
+        /// </summary>
+        public static string RandomAreaName {
+            get {
+                return ResourceManager.GetString("RandomAreaName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Random Delay Enable 的本地化字符串。
+        /// </summary>
+        public static string RandomDelayName {
+            get {
+                return ResourceManager.GetString("RandomDelayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Right Single 的本地化字符串。
+        /// </summary>
+        public static string RightSingleName {
+            get {
+                return ResourceManager.GetString("RightSingleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Secs 的本地化字符串。
+        /// </summary>
+        public static string SecsName {
+            get {
+                return ResourceManager.GetString("SecsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Select 的本地化字符串。
+        /// </summary>
+        public static string SelectName {
+            get {
+                return ResourceManager.GetString("SelectName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Set 的本地化字符串。
+        /// </summary>
+        public static string SetName {
+            get {
+                return ResourceManager.GetString("SetName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Settings 的本地化字符串。
+        /// </summary>
+        public static string SettingsName {
+            get {
+                return ResourceManager.GetString("SettingsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Start 的本地化字符串。
+        /// </summary>
+        public static string StartName {
+            get {
+                return ResourceManager.GetString("StartName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stop 的本地化字符串。
+        /// </summary>
+        public static string StopName {
+            get {
+                return ResourceManager.GetString("StopName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bongo Paw Clicker 的本地化字符串。
+        /// </summary>
+        public static string TitleName {
+            get {
+                return ResourceManager.GetString("TitleName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Welcome! Meow~~~ 的本地化字符串。
+        /// </summary>
+        public static string WelcomeMessage {
+            get {
+                return ResourceManager.GetString("WelcomeMessage", resourceCulture);
             }
         }
     }
