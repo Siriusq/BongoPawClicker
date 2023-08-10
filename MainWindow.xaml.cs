@@ -67,12 +67,6 @@ namespace BongoPawClicker
             ClickTimesTextBox.Text = Properties.Settings.Default.ClickTimes;
 
             meowAudio = new System.Media.SoundPlayer(Properties.Resources.meow);
-
-            CultureInfo currentCulture = CultureInfo.CurrentCulture;
-            CultureInfo currentUICulture = CultureInfo.CurrentUICulture;
-
-            Console.WriteLine("Current Culture: " + currentCulture.Name);
-            Console.WriteLine("Current UI Culture: " + currentUICulture.Name);
         }
 
         #region HotKey
