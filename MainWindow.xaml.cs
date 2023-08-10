@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using static BongoPawClicker.User32API;
 
 namespace BongoPawClicker
@@ -216,9 +217,26 @@ namespace BongoPawClicker
             }
         }
 
+        //Animation: Minimize Window
         private void MinusButton_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            var story = (Storyboard)this.Resources["MinimizeWindow"];
+            if (story != null)
+            {
+                story.Completed += delegate { this.WindowState = WindowState.Minimized; };
+                story.Begin(this);
+            }
+            //this.WindowState = WindowState.Minimized;
+        }
+
+        //Animation: Restore Window From TaskBar
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            if (WindowState == WindowState.Normal && this.Opacity==0)
+            {
+                var story = (Storyboard)this.Resources["MaximizeWindow"];
+                story.Begin(this);
+            }
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
@@ -248,7 +266,15 @@ namespace BongoPawClicker
 
             Properties.Settings.Default.Save();
 
-            Close();
+            //Close Animation
+            var story = (Storyboard)this.Resources["HideWindow"];
+            if (story != null)
+            {
+                story.Completed += delegate { Close(); };
+                story.Begin(this);
+            }
+
+            //Close();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

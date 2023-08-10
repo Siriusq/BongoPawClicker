@@ -4,6 +4,7 @@ using System;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 
 namespace BongoPawClicker
 {
@@ -30,7 +31,14 @@ namespace BongoPawClicker
 
         private void SettingPanel_CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Close();
+            //Close Animation
+            var story = (Storyboard)this.Resources["HideWindow"];
+            if (story != null)
+            {
+                story.Completed += delegate { Close(); };
+                story.Begin(this);
+            }
+            //Close();
         }
 
         private void SettingPanel_Loaded(object sender, RoutedEventArgs e)

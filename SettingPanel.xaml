@@ -24,12 +24,87 @@
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
     mc:Ignorable="d">
-    <Grid>
-        <materialDesign:Card
-            Margin="10"
-            Background="{DynamicResource CardBackgroundColor}"
-            Effect="{DynamicResource MaterialDesignElevationShadow2}"
-            UniformCornerRadius="15">
+
+    <!--  Animation  -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <Storyboard x:Key="HideWindow">
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetProperty="Opacity"
+                    From="1"
+                    To="0"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="SettingsMainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleX)"
+                    From="1"
+                    To="0.8"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="SettingsMainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleY)"
+                    From="1"
+                    To="0.8"
+                    Duration="0:0:0.2" />
+            </Storyboard>
+            <Storyboard x:Key="ShowWindow">
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetProperty="Opacity"
+                    From="0"
+                    To="1"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="SettingsMainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleX)"
+                    From="0.8"
+                    To="1"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="SettingsMainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleY)"
+                    From="0.8"
+                    To="1"
+                    Duration="0:0:0.2" />
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!--  Load Window Animation  -->
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource ShowWindow}" />
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid
+        x:Name="SettingsMainGrid"
+        Margin="10"
+        RenderTransformOrigin="0.5,0.5">
+        <!--  Shadow Effect  -->
+        <Grid.Effect>
+            <DropShadowEffect
+                BlurRadius="15"
+                Opacity="0.8"
+                ShadowDepth="0"
+                Color="#666666" />
+        </Grid.Effect>
+        <!--  Transform Animation  -->
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+                <SkewTransform />
+                <RotateTransform />
+                <TranslateTransform />
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <materialDesign:Card Background="{DynamicResource CardBackgroundColor}" UniformCornerRadius="15">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />

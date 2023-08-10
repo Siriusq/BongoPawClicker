@@ -17,6 +17,7 @@
     Loaded="Window_Loaded"
     MouseLeftButtonDown="WindowsDragZone"
     ResizeMode="CanMinimize"
+    StateChanged="Window_StateChanged"
     TextElement.FontWeight="Regular"
     TextElement.Foreground="{DynamicResource MaterialDesignBody}"
     TextOptions.TextFormattingMode="Ideal"
@@ -25,12 +26,116 @@
     WindowStyle="None"
     mc:Ignorable="d">
 
-    <Grid>
-        <materialDesign:Card
-            Margin="10"
-            Background="{DynamicResource CardBackgroundColor}"
-            Effect="{DynamicResource MaterialDesignElevationShadow2}"
-            UniformCornerRadius="15">
+    <!--  Animation  -->
+    <Window.Resources>
+        <ResourceDictionary>
+            <!--  Close  -->
+            <Storyboard x:Key="HideWindow">
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetProperty="Opacity"
+                    From="1"
+                    To="0"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="MainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleX)"
+                    From="1"
+                    To="0.8"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="MainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleY)"
+                    From="1"
+                    To="0.8"
+                    Duration="0:0:0.2" />
+            </Storyboard>
+            <!--  Load  -->
+            <Storyboard x:Key="ShowWindow">
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetProperty="Opacity"
+                    From="0"
+                    To="1"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="MainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleX)"
+                    From="0.8"
+                    To="1"
+                    Duration="0:0:0.2" />
+                <DoubleAnimation
+                    FillBehavior="Stop"
+                    Storyboard.TargetName="MainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleY)"
+                    From="0.8"
+                    To="1"
+                    Duration="0:0:0.2" />
+            </Storyboard>
+            <!--  Minimize  -->
+            <Storyboard x:Key="MinimizeWindow">
+                <DoubleAnimation
+                    Storyboard.TargetProperty="Opacity"
+                    From="1"
+                    To="0"
+                    Duration="0:0:0.3" />
+                <DoubleAnimation
+                    Storyboard.TargetName="MainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)"
+                    From="0"
+                    To="590"
+                    Duration="0:0:0.3" />
+            </Storyboard>
+            <!--  Maximize  -->
+            <Storyboard x:Key="MaximizeWindow">
+                <DoubleAnimation
+                    Storyboard.TargetProperty="Opacity"
+                    From="0"
+                    To="1"
+                    Duration="0:0:0.3" />
+                <DoubleAnimation
+                    Storyboard.TargetName="MainGrid"
+                    Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)"
+                    From="590"
+                    To="0"
+                    Duration="0:0:0.3" />
+            </Storyboard>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <!--  Load Window Animation  -->
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard Storyboard="{StaticResource ShowWindow}" />
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Grid
+        x:Name="MainGrid"
+        Margin="10"
+        RenderTransformOrigin="0.5,0.5">
+        <!--  Shadow Effect  -->
+        <Grid.Effect>
+            <DropShadowEffect
+                BlurRadius="15"
+                Opacity="0.8"
+                ShadowDepth="0"
+                Color="#666666" />
+        </Grid.Effect>
+        <!--  Transform Animation  -->
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleX="1" ScaleY="1" />
+                <SkewTransform />
+                <RotateTransform />
+                <TranslateTransform />
+            </TransformGroup>
+        </Grid.RenderTransform>
+
+        <materialDesign:Card Background="{DynamicResource CardBackgroundColor}" UniformCornerRadius="15">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
@@ -80,7 +185,8 @@
                             Margin="10"
                             VerticalAlignment="Center"
                             Click="SettingButton_Click"
-                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
                             <materialDesign:PackIcon
                                 Width="25"
                                 Height="25"
@@ -94,7 +200,8 @@
                             Margin="5"
                             VerticalAlignment="Center"
                             Click="MinusButton_Click"
-                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
                             <materialDesign:PackIcon
                                 Width="25"
                                 Height="25"
@@ -108,7 +215,8 @@
                             Margin="10"
                             VerticalAlignment="Center"
                             Click="CloseButton_Click"
-                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
                             <materialDesign:PackIcon
                                 Width="25"
                                 Height="25"
