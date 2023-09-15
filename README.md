@@ -3,12 +3,13 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/Siriusq/BongoPawClicker?style=flat-square&logo=csharp&color=%232c8d0f)
 ![Static Badge](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square&logo=windows11&label=platform&color=%230078D4)
 ![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/Siriusq/BongoPawClicker?style=flat-square&logo=github)
-
+![Static Badge](https://img.shields.io/badge/Framework%204.8-lightgrey.svg?style=flat-square&label=.NET&labelColor=%23555555&color=%23512BD4)
 
 An auto clicker with bongo cat integrated
 
 🔗[中文文档](./README/README-CN.md)
 🔗[Download](https://github.com/Siriusq/BongoPawClicker/releases/download/v1.0/BongoPawClicker.exe)
+🔗[Development Summary](https://siriusq.top/en/bongo-paw-blicker.html)
 
 # Preview
 ![preview](./README/en-preview.png)

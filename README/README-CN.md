@@ -3,12 +3,13 @@
 ![GitHub top language](https://img.shields.io/github/languages/top/Siriusq/BongoPawClicker?style=flat-square&logo=csharp&color=%232c8d0f)
 ![Static Badge](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square&logo=windows11&label=platform&color=%230078D4)
 ![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/Siriusq/BongoPawClicker?style=flat-square&logo=github)
-
+![Static Badge](https://img.shields.io/badge/Framework%204.8-lightgrey.svg?style=flat-square&label=.NET&labelColor=%23555555&color=%23512BD4)
 
 一个集成了邦鼓猫 (Bongo Cat) 的自动鼠标连点器
 
 🔗[English Documents](../README.md)
 🔗[下载](https://github.com/Siriusq/BongoPawClicker/releases/download/v1.0/BongoPawClicker.exe)
+🔗[开发总结](https://siriusq.top/BongoPawClicker.html)
 
 # 预览
 ![preview](./cn-preview.png)
