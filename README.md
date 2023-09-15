@@ -32,7 +32,7 @@ An auto clicker with bongo cat integrated
 # Development
 If you want to modify the program’s code, please open **FodyWeavers.xml** and comment out **Costura**, otherwise VS won't be able to display the window preview correctly. Because **Fody.Costura** is used in the project to package the program into a single exe, DLL and other files will be embedded in the exe when packaging, which will cause VS to report an error due to inability to find the required file.
 
-For example, if the path to a required DLL is `. /bin/Release/xxx.dll`, Fody.Costura will embed this file in BongoPawClicker.exe, `. /The `xxx.dll` will not exist in the `bin/Release` directory, and VS will still look for the DLL according to the previous path, which leads to an error.
+For example, if the path to a required DLL is `. /bin/Release/xxx.dll`, Fody.Costura will embed this file in BongoPawClicker.exe, the `xxx.dll` will not exist in the `bin/Release` directory, and VS will still look for the DLL according to the previous path, which leads to an error.
 
 
 ```xml
@@ -43,7 +43,7 @@ For example, if the path to a required DLL is `. /bin/Release/xxx.dll`, Fody.Cos
 ```
 
 # Murmur
-My motivation for developing this clicker is that the plot of a certain open-world game that starts with G is getting more and more naive and the scriptwriters are bringing in their crap, and I couldn't stand it. Yet there is no option to skip the plot, so I decided to create a mouse clicker to help me automatically click to play the episode quickly without the need for me to watch it myself, and I can also learn WPF along the way. As for the bongo cat, it's just for fun! 🐱🐱
+My motivation for developing this clicker is that the plot of a certain open-world game that starts with G is getting more and more naive and the scriptwriters are bringing in their crap, and I couldn't stand it. Yet there is no option to skip the plot, so I decided to create a mouse clicker to help me automatically click to play the episode quickly without the need for me to watch it myself, and I can also learn WPF along the way. As for the bongo cat, it's just for fun! 🐱
 
 # Package
 ### NuGet
