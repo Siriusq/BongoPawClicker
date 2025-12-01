@@ -15,6 +15,7 @@
   <a href="https://github.com/Siriusq/BongoPawClicker">🔗 English README</a>
   <a href="https://github.com/Siriusq/BongoPawClicker/releases/download/v1.1/BongoPawClicker.exe">🔗 下载</a>
   <a href="https://siriusq.top/BongoPawClicker.html">🔗 开发总结</a>
+  <a href="https://www.virustotal.com/gui/file/987c32823ee9e1a2da8869eab6798c5c17bc5de52e01b2e40686d2cdb2284297">🔗 VirusTotal 扫描报告</a>
 </p>
 
 # 🎬 预览

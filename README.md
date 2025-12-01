@@ -15,6 +15,7 @@ An auto clicker with bongo cat integrated
   <a href="https://github.com/Siriusq/BongoPawClicker/blob/master/README/README-CN.md">🔗 中文文档</a>
   <a href="https://github.com/Siriusq/BongoPawClicker/releases/download/v1.1/BongoPawClicker.exe">🔗 Download</a>
   <a href="https://siriusq.top/en/bongo-paw-blicker.html">🔗 Development Summary</a>
+  <a href="https://www.virustotal.com/gui/file/987c32823ee9e1a2da8869eab6798c5c17bc5de52e01b2e40686d2cdb2284297">🔗 VirusTotal Scan Report</a>
 </p>
 
 # 🎬 Preview
