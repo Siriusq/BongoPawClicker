@@ -17,6 +17,7 @@ An auto clicker with bongo cat integrated
 # Features
 - Random click interval
 - Random click area, the program will click at random positions within the area.
+- Real-time mouse-following auto-click.
 - Unlimited continuous clicks
 - Light/Dark theme switching
 - Automatically switch between English and Chinese according to the system language settings
@@ -25,9 +26,14 @@ An auto clicker with bongo cat integrated
 - Catcall alert when clicking done
 
 # How to Use
-- Hotkey self-definition: Click on the hotkey preview text box in the settings panel, press the keyboard to record new hotkeys, and then click the Set button to save the recording.
-- Random click interval: Turn on the **Random Delay Enable** switch to type the delay time in the following text box, for example, if the click interval is set to **200** ms and the delay time is set to **100** ms, the final click interval will be randomly valued from **200-300** ms. In addition, the double-click interval will be randomly selected from **50-300** milliseconds after enabling the random delay.
-- Click position： Either manually enter the screen coordinates in the text box or click the **Select** button to go to the position selector and press the left mouse button to select. After turning on the **Random Area Enable** switch, you can hold the left mouse button in the position selector to frame the range.
+- **Hotkey**: The default hotkey is `Alt + Ctrl + P`. The auto-click can be triggered even when the program is minimized. Pressing the hotkey again during execution will immediately stop all subsequent clicks.
+- **Custom Hotkey**: In the settings panel, left-click the hotkey preview textbox and press the desired key combination to record a new hotkey. Click “OK” to save after recording.
+- **Real-time mouse-following click**: To enable this, turn off the **Random Area Enable** option and **clear** the **X** and **Y** coordinates of the click position. The clicks will then follow the mouse position in real time.
+- **Click Position Selection**:
+  - When **Random Area Enable** is **off**, click anywhere on the selection overlay to choose the click position.
+  - When **Random Area Enable** is **on**, hold the left mouse button and drag to select a click area.
+- **Random click interval**: Turn on the **Random Delay Enable** switch to type the delay time in the following text box, for example, if the click interval is set to **200** ms and the delay time is set to **100** ms, the final click interval will be randomly valued from **200-300** ms. In addition, the double-click interval will be randomly selected from **50-300** milliseconds after enabling the random delay.
+- **Click position**：Either manually enter the screen coordinates in the text box or click the **Select** button to go to the position selector and press the left mouse button to select. After turning on the **Random Area Enable** switch, you can hold the left mouse button in the position selector to frame the range.
 
 # Development
 If you want to modify the program’s code, please open **FodyWeavers.xml** and comment out **Costura**, otherwise VS won't be able to display the window preview correctly. Because **Fody.Costura** is used in the project to package the program into a single exe, DLL and other files will be embedded in the exe when packaging, which will cause VS to report an error due to inability to find the required file.
