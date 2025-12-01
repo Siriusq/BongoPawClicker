@@ -1,45 +1,68 @@
-# BongoPawClicker
-![GitHub](https://img.shields.io/github/license/Siriusq/BongoPawClicker?style=flat-square)
-![GitHub top language](https://img.shields.io/github/languages/top/Siriusq/BongoPawClicker?style=flat-square&logo=csharp&color=%232c8d0f)
-![Static Badge](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square&logo=windows11&label=platform&color=%230078D4)
-![GitHub Release Date - Published_At](https://img.shields.io/github/release-date/Siriusq/BongoPawClicker?style=flat-square&logo=github)
-![Static Badge](https://img.shields.io/badge/Framework%204.8-lightgrey.svg?style=flat-square&label=.NET&labelColor=%23555555&color=%23512BD4)
+<h1 align="center">BongoPawClicker</h1>
 
+<p align="center">
 An auto clicker with bongo cat integrated
+</p>
 
-🔗[中文文档](./README/README-CN.md)
-🔗[Download](https://github.com/Siriusq/BongoPawClicker/releases/download/v1.0/BongoPawClicker.exe)
-🔗[Development Summary](https://siriusq.top/en/bongo-paw-blicker.html)
+<p align="center">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Siriusq/BongoPawClicker?style=for-the-badge&logo=c">  
+  <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/Siriusq/BongoPawClicker?style=for-the-badge&logo=github">
+  <img alt="GitHub License" src="https://img.shields.io/github/license/Siriusq/BongoPawClicker?style=for-the-badge&logo=git">
+  <img alt="NET Framework" src="https://img.shields.io/badge/Framework%204.8-lightgrey.svg?style=for-the-badge&label=.NET&labelColor=%23555555&color=%23512BD4">
+</p>
 
-# Preview
+<p align="center">
+  <a href="https://github.com/Siriusq/BongoPawClicker/blob/master/README/README-CN.md">🔗 中文文档</a>
+  <a href="https://github.com/Siriusq/BongoPawClicker/releases/download/v1.1/BongoPawClicker.exe">🔗 Download</a>
+  <a href="https://siriusq.top/en/bongo-paw-blicker.html">🔗 Development Summary</a>
+</p>
+
+# 🎬 Preview
 ![preview](./README/en-preview.png)
 
-# Features
-- Random click interval
-- Random click area, the program will click at random positions within the area.
-- Real-time mouse-following auto-click.
-- Unlimited continuous clicks
-- Light/Dark theme switching
-- Automatically switch between English and Chinese according to the system language settings
-- Modify your own hotkeys
-- Bongo cats react differently depending on the click type (cat's paw on the table)
-- Catcall alert when clicking done
+# ✨ Features
+- ⏱ Random click interval
+- 🎯 Random click area, the program will click at random positions within the area.
+- 🖱 Real-time mouse-following auto-click.
+- 🔁 Unlimited continuous clicks
+- 🌗 Light/Dark theme switching
+- 🌐 Automatically switch between English and Chinese according to the system language settings
+- ⌨️ Modify your own hotkeys
+- 🐾 Bongo cats react differently depending on the click type (cat's paw on the table)
+- 🔔 Catcall alert when clicking done
 
 # How to Use
-- **Hotkey**: The default hotkey is `Alt + Ctrl + P`. The auto-click can be triggered even when the program is minimized. Pressing the hotkey again during execution will immediately stop all subsequent clicks.
-- **Custom Hotkey**: In the settings panel, left-click the hotkey preview textbox and press the desired key combination to record a new hotkey. Click “OK” to save after recording.
-- **Real-time mouse-following click**: To enable this, turn off the **Random Area Enable** option and **clear** the **X** and **Y** coordinates of the click position. The clicks will then follow the mouse position in real time.
-- **Click Position Selection**:
-  - When **Random Area Enable** is **off**, click anywhere on the selection overlay to choose the click position.
-  - When **Random Area Enable** is **on**, hold the left mouse button and drag to select a click area.
-- **Random click interval**: Turn on the **Random Delay Enable** switch to type the delay time in the following text box, for example, if the click interval is set to **200** ms and the delay time is set to **100** ms, the final click interval will be randomly valued from **200-300** ms. In addition, the double-click interval will be randomly selected from **50-300** milliseconds after enabling the random delay.
-- **Click position**：Either manually enter the screen coordinates in the text box or click the **Select** button to go to the position selector and press the left mouse button to select. After turning on the **Random Area Enable** switch, you can hold the left mouse button in the position selector to frame the range.
+## 📘 Usage Guide
+### ⌨️ Hotkey
+- The default hotkey is **`Alt + Ctrl + P`**.
+- You can trigger auto-clicking even when the program is minimized.
+- Press the hotkey again during execution to immediately stop all subsequent clicks.
+### 🎚️ Custom Hotkey
+- In the settings panel, left-click the hotkey preview textbox.
+- Press your desired key combination to record a new hotkey.
+- Click **“OK”** to save it once you're done.
+### 🖱️ Real-Time Mouse-Following Click
+- Turn **off** the **Random Area Enable** option.
+- **Clear** the **X** and **Y** coordinates of the click position.
+- The auto-clicker will then click exactly where your mouse currently is, in real time.
+### 🎯 Click Position Selection
+- When **Random Area Enable** is **off**:
+  - Click anywhere on the selection overlay to choose the exact click point.
+- When **Random Area Enable** is **on**:
+  - Hold the **left mouse button** and drag to select a rectangular click area.
+### ⏱️ Random Click Interval
+- Enable **Random Delay Enable** to enter a delay value in the textbox.
+- Example: If the base interval is **200 ms** and the delay is **100 ms**, the final interval will be randomly chosen between **200–300 ms**.
+- When random delay is enabled, the double-click interval will also be randomly chosen between **50–300 ms**.
 
-# Development
+# ⚠️ Known Issues
+- 🛡 **Permission Issue**: Some applications run with higher privileges. If the auto-clicker does not work correctly in these programs, try running the auto-clicker as an administrator.
+- ⏱ **Click Interval**: Due to timer precision and computer performance, the actual click interval may be slightly longer than the interval set.
+
+# 💻 Development
 If you want to modify the program’s code, please open **FodyWeavers.xml** and comment out **Costura**, otherwise VS won't be able to display the window preview correctly. Because **Fody.Costura** is used in the project to package the program into a single exe, DLL and other files will be embedded in the exe when packaging, which will cause VS to report an error due to inability to find the required file.
 
 For example, if the path to a required DLL is `. /bin/Release/xxx.dll`, Fody.Costura will embed this file in BongoPawClicker.exe, the `xxx.dll` will not exist in the `bin/Release` directory, and VS will still look for the DLL according to the previous path, which leads to an error.
-
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -48,14 +71,14 @@ For example, if the path to a required DLL is `. /bin/Release/xxx.dll`, Fody.Cos
 </Weavers>
 ```
 
-# Murmur
+# 🐾 Murmur
 My motivation for developing this clicker is that the plot of a certain open-world game that starts with G is getting more and more naive and the scriptwriters are bringing in their crap, and I couldn't stand it. Yet there is no option to skip the plot, so I decided to create a mouse clicker to help me automatically click to play the episode quickly without the need for me to watch it myself, and I can also learn WPF along the way. As for the bongo cat, it's just for fun! 🐱
 
-# Package
-### NuGet
+# 📦 Package
+### 🎲 NuGet
 - [Material Design In XAML](http://materialdesigninxaml.net/)
 - [Costura](https://github.com/Fody/Costura) 
 - [Resource.Embedder](https://www.nuget.org/packages/Resource.Embedder/)
 
-### Special thanks
+### 🙏 Special thanks
 - [ChatGPT](https://chat.openai.com/)
