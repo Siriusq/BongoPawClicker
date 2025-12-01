@@ -1,6 +1,7 @@
 ﻿using MaterialDesignColors;
 using MaterialDesignThemes.Wpf;
 using System;
+using System.Diagnostics;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -143,6 +144,33 @@ namespace BongoPawClicker
         private void WindowsDragZone(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        //Open Help Webpage in Default Browser
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string helpPageURL;
+                if (CultureInfo.CurrentUICulture.Name == "zh-CN")
+                {
+                    helpPageURL = "https://github.com/Siriusq/BongoPawClicker/blob/master/README/README-CN.md#%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97";
+                }
+                else
+                {
+                    helpPageURL = "https://github.com/Siriusq/BongoPawClicker?tab=readme-ov-file#how-to-use";
+                }
+                ProcessStartInfo psi = new ProcessStartInfo
+                {
+                    FileName = helpPageURL,
+                    UseShellExecute = true
+                };
+                Process.Start(psi);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error：{ex.Message}");
+            }
         }
 
         //Load Setting Panel

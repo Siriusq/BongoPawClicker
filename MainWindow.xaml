@@ -177,6 +177,21 @@
 
                     <!--  Windows Control  -->
                     <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <!--  Help  -->
+                        <Button
+                            x:Name="HelpButton"
+                            Width="30"
+                            Height="30"
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            Click="HelpButton_Click"
+                            Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
+                            <materialDesign:PackIcon
+                                Width="25"
+                                Height="25"
+                                Kind="HelpCircleOutline" />
+                        </Button>
                         <!--  Settings  -->
                         <Button
                             x:Name="SettingButton"
