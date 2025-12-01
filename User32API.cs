@@ -38,6 +38,16 @@ namespace BongoPawClicker
             else { mouse_event(MOUSEEVENT_LEFTDOWN | MOUSEEVENTF_LEFTUP, 0, 0, 0, 0); }
         }
 
+        [StructLayout(LayoutKind.Sequential)]
+        public struct POINT
+        {
+            public int X;
+            public int Y;
+        }
+
+        [DllImport("user32.dll")]
+        public static extern bool GetCursorPos(out POINT lpPoint);
+
         #endregion
 
 

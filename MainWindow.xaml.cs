@@ -226,7 +226,7 @@ namespace BongoPawClicker
         //Animation: Restore Window From TaskBar
         private void Window_StateChanged(object sender, EventArgs e)
         {
-            if (WindowState == WindowState.Normal && this.Opacity==0)
+            if (WindowState == WindowState.Normal && this.Opacity == 0)
             {
                 var story = (Storyboard)this.Resources["MaximizeWindow"];
                 story.Begin(this);
@@ -352,6 +352,7 @@ namespace BongoPawClicker
             bool randomAreaEnabled = false;
             int xPos = 0, yPos = 0;
             int randomAreaWidth = 0, randomAreaHeight = 0;
+            bool followMouse = false;
 
             //Click Times Parameters
             bool infinityClickEnabled = false;
@@ -389,8 +390,17 @@ namespace BongoPawClicker
                 {
                     randomAreaEnabled = RandomAreaEnabledToggleButton.IsChecked.Value;
 
-                    xPos = ValidIntConvertor(PositionXTextBox.Text);
-                    yPos = ValidIntConvertor(PositionYTextBox.Text);
+                    if (string.IsNullOrEmpty(PositionXTextBox.Text) &&
+                string.IsNullOrEmpty(PositionYTextBox.Text) &&
+                !randomAreaEnabled)
+                    {
+                        followMouse = true;
+                    }
+                    else
+                    {
+                        xPos = ValidIntConvertor(PositionXTextBox.Text);
+                        yPos = ValidIntConvertor(PositionYTextBox.Text);
+                    }
 
                     if (randomAreaEnabled)
                     {
@@ -423,6 +433,8 @@ namespace BongoPawClicker
             //Do Clicks
             int xCoord = xPos, yCoord = yPos; //Click Position Coords
             bool manualStop = false;
+            User32API.POINT currentMousePoint;
+
             while (infinityClickEnabled || clickTimes > 0)
             {
                 Dispatcher.Invoke((Action)(() =>
@@ -433,11 +445,22 @@ namespace BongoPawClicker
 
                 if (manualStop) { break; }
 
+                if (followMouse)
+                {
+                    User32API.GetCursorPos(out currentMousePoint);
+                    xCoord = currentMousePoint.X;
+                    yCoord = currentMousePoint.Y;
+                }
                 //Calculate random click position if random click areas are enabled
-                if (randomAreaEnabled)
+                else if (randomAreaEnabled)
                 {
                     xCoord = (randomAreaWidth == 0) ? xPos : random.Next(xPos, xPos + randomAreaWidth + 1);
                     yCoord = (randomAreaHeight == 0) ? yPos : random.Next(yPos, yPos + randomAreaHeight + 1);
+                }
+                else
+                {
+                    xCoord = xPos;
+                    yCoord = yPos;
                 }
 
                 //Click Type
